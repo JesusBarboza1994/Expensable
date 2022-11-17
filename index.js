@@ -1,2 +1,21 @@
+import { login, logout } from "./src/services/sessions-services.js"
 
-console.log("Hola mundo");
+const credentials = {
+	"email": "test23@mail.com",
+	"password": "123456"
+};
+
+async function test(){
+  try {
+    const user = await login(credentials);
+    console.log(user);
+
+    // const data = await logout();
+    // console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+test();
+
